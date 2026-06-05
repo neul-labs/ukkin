@@ -4,15 +4,17 @@ Solutions to frequently encountered problems with Ukkin.
 
 ## Installation Issues
 
-### APK Won't Install
+### `flutter pub get` fails resolving `agentlib`
 
-**Symptoms:** "App not installed" or "Installation blocked" error
+**Symptoms:** "Could not find a file named pubspec.yaml in ../agentlib" or path resolution errors.
 
 **Solutions:**
-1. Enable "Install from unknown sources" in settings
-2. Ensure you have enough storage (need 2GB free)
-3. Uninstall any previous version first
-4. Try downloading the APK again (may be corrupted)
+1. Ukkin's `pubspec.yaml` declares `agentlib: path: ../agentlib`. Clone it as a sibling:
+   ```bash
+   git clone https://github.com/neul-labs/agentlib.git ../agentlib
+   ```
+2. Re-run `flutter pub get` from the `ukkin` directory.
+3. If you previously had a stale lockfile: `flutter clean && flutter pub get`.
 
 ### App Crashes on First Launch
 
@@ -21,8 +23,8 @@ Solutions to frequently encountered problems with Ukkin.
 **Solutions:**
 1. Restart your device
 2. Clear app cache and data
-3. Ensure you have at least 4GB RAM available
-4. Check Android version is 8.0 or higher
+3. Confirm `QuickStart.initialize(...)` is not throwing - check logs via `flutter logs`
+4. Verify minimum platform: Android API 21+ or iOS 11+
 
 ### Model Fails to Load
 

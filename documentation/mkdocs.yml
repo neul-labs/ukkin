@@ -1,10 +1,11 @@
 site_name: Ukkin - AI Mobile Agent
 site_description: Create personal AI agents that automate tasks on your phone
 site_author: Ukkin Team
-site_url: https://ukkin.dev
+site_url: https://ukkin.docs.neullabs.com/
 
-repo_name: ukkin
-repo_url: https://github.com/ukkin/ukkin
+repo_name: neul-labs/ukkin
+repo_url: https://github.com/neul-labs/ukkin
+edit_uri: edit/main/documentation/docs/
 
 theme:
   name: material
@@ -82,4 +83,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ukkin/ukkin
+      link: https://github.com/neul-labs/ukkin

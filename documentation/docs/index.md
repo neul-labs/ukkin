@@ -92,3 +92,28 @@ Ukkin is built with privacy as a core principle:
 ---
 
 Ready to get started? Check out the [Installation Guide](getting-started/installation.md) to begin automating your mobile experience.
+
+## Architecture at a Glance
+
+Ukkin is the Flutter UI layer; the agent runtime lives in a sibling package called **AgentLib** (`../agentlib`). The core abstractions:
+
+| Abstraction | Role |
+|-------------|------|
+| `RepetitiveTaskAgent` | Base class for background agents that run on a schedule |
+| `TaskScheduler` | Coordinates agents based on device state (battery, network, time) |
+| `AppPluginSystem` | Modular per-app integration framework |
+| `RealAutomation` | Accessibility-service bridge for tapping, typing, scrolling, screen reads |
+| `ConversationalAgentBuilder` | Natural-language agent creation flow |
+
+Specialised agents shipped today: `InstagramWatcherAgent`, `EmailTriageAgent`, `PriceWatcherAgent`.
+
+## Repository Layout
+
+- `lib/ui/` - chat, dashboard, agent setup wizard, conversational builder
+- `lib/agent/` - agent core, planning, tools, security, mobile automation
+- `lib/integrations/` - per-app integration services and workflow builder
+- `lib/config/` - `AppConfig`, `ConfigManager`, `SettingsScreen`
+- `lib/mobile/` - notifications, quick actions
+- `lib/voice/` - voice activation, chat, speech input
+- `lib/vlm/` - visual / screen-understanding widgets
+- `documentation/` - this MkDocs site

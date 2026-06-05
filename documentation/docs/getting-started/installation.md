@@ -1,55 +1,58 @@
 # Installation
 
-This guide walks you through installing Ukkin on your Android or iOS device.
+Ukkin is an experimental Flutter project. Today it is built from source, not distributed as a packaged release.
 
 ## Requirements
 
+### Toolchain
+- Flutter SDK `3.1.5+` (matches `environment.sdk` in `pubspec.yaml`)
+- Dart `>=3.1.5 <4.0.0`
+- Git
+- A sibling checkout of [`agentlib`](https://github.com/neul-labs/agentlib) at `../agentlib` (the `pubspec.yaml` declares `agentlib: path: ../agentlib`)
+
 ### Android
-- Android 8.0 (Oreo) or higher
-- Minimum 4GB RAM recommended
-- 500MB free storage space
+- Android API level 21+ (Android 5.0)
+- `ANDROID_HOME` exported in your shell
+- A device or emulator with the Accessibility Service permission available (required for screen automation)
 
 ### iOS
 - iOS 11.0 or higher
-- iPhone 6s or newer
-- 500MB free storage space
+- Xcode with iOS toolchain
+- `Info.plist` permissions configured for the integrations you intend to use
 
-## Download
+## Clone and Run
 
-### Android
+```bash
+git clone https://github.com/neul-labs/ukkin.git
+cd ukkin
+flutter pub get
+flutter run
+```
 
-1. Download the APK from the [releases page](https://github.com/ukkin/ukkin/releases)
-2. Enable installation from unknown sources if prompted
-3. Open the APK file to install
+`flutter pub get` will resolve `agentlib` from the sibling `../agentlib` directory. If you do not have it, clone it first:
 
-### iOS
-
-1. Download from TestFlight (beta) or the App Store (when available)
-2. Follow the on-screen installation prompts
+```bash
+git clone https://github.com/neul-labs/agentlib.git ../agentlib
+```
 
 ## First Launch
 
-When you first open Ukkin, the app will:
+On first launch the app:
 
-1. **Initialize the AI model** - This may take a few moments on first launch
-2. **Create a default assistant** - A pre-configured mobile assistant is set up automatically
-3. **Request permissions** - You'll be asked to grant necessary permissions
+1. Initializes AgentLib via `QuickStart.initialize(mode: QuickStartMode.development, databaseName: 'ukkin')`
+2. Creates a default mobile assistant via `QuickStart.createMobileAssistant(...)`
+3. Prompts for any platform permissions required by the agents you create
 
-!!! info "Initial Setup Time"
-    The first launch may take 30-60 seconds as the on-device AI model is initialized. Subsequent launches are much faster.
+The on-device model warm-up may take 30-60 seconds on first launch.
 
 ## Verify Installation
 
-After installation, verify everything is working:
-
-1. Open Ukkin
-2. You should see the chat interface
-3. Try sending a message like "Hello" to confirm the AI is responding
-4. Tap the "Agents" tab to see the dashboard
+1. Launch the app on a device or emulator
+2. The chat interface opens by default
+3. Send a test message and confirm a response
+4. Switch to the **Agents** tab to view the dashboard
 
 ## Next Steps
 
-Once installed, proceed to:
-
-- [Quick Start Guide](quick-start.md) - Create your first agent
-- [Permissions Setup](permissions.md) - Configure required permissions for automation
+- [Quick Start](quick-start.md) - Create your first agent
+- [Permissions](permissions.md) - Enable the Accessibility Service and other required permissions

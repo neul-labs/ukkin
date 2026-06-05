@@ -157,17 +157,17 @@ Not currently. Ukkin is designed for mobile devices. A desktop version may be co
 ### Where can I report bugs?
 
 Report issues on our GitHub repository:
-https://github.com/ukkin/ukkin/issues
+https://github.com/neul-labs/ukkin/issues
 
 ### How do I request features?
 
 Submit feature requests on GitHub:
-https://github.com/ukkin/ukkin/issues
+https://github.com/neul-labs/ukkin/issues
 
 ### Is there a community forum?
 
 Join discussions on GitHub Discussions:
-https://github.com/ukkin/ukkin/discussions
+https://github.com/neul-labs/ukkin/discussions
 
 ### How can I contribute?
 
