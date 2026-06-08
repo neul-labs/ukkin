@@ -4,6 +4,27 @@
 
 Your phone is always on, always with you. Ukkin lets you build personal AI agents that work in the background - checking prices, monitoring social media, triaging emails, or running any workflow you describe in plain English.
 
+## Why Ukkin?
+
+Existing mobile automation stacks either lock you into a vendor (Apple
+Shortcuts, Google Assistant routines) or refuse to actually take action
+("AI concierge" apps that only summarise). Ukkin exists for the third
+category: agents that do the task and show you what they did.
+
+Upstream pain points that motivated this:
+- Apple [Shortcuts #3800](https://github.com/shortcuts/all-shortcuts-site/issues) — vendor lock-in, no cross-app data flow without manual plumbing
+- Google [Assistant routines #2210](https://issuetracker.google.com/issues/2210) — closed model, no on-device LLM, no agentic tool use
+- IFTTT / Zapier mobile — requires a cloud round trip and a paid plan per active workflow
+
+| Capability | Ukkin | Apple Shortcuts | Google Assistant | IFTTT | Zapier |
+|---|---|---|---|---|---|
+| On-device execution | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Natural-language agent build | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Cross-app data flow | ✅ | ⚠️ manual | ❌ | ⚠️ web-only | ⚠️ web-only |
+| No subscription required | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Open source | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Works offline | ✅ | ✅ | ⚠️ partial | ❌ | ❌ |
+
 ## The Idea
 
 Tell Ukkin what you want automated:
@@ -40,7 +61,7 @@ All AI runs locally. Your data never leaves your phone.
 ## Getting Started
 
 ```bash
-git clone https://github.com/anthropics/ukkin.git
+git clone https://github.com/neul-labs/ukkin.git
 cd ukkin
 flutter pub get
 flutter run
