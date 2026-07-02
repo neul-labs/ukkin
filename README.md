@@ -2,7 +2,9 @@
 
 **Create AI agents on your phone that automate your daily tasks.**
 
-Your phone is always on, always with you. Ukkin lets you build personal AI agents that work in the background - checking prices, monitoring social media, triaging emails, or running any workflow you describe in plain English.
+**[Website](https://ukkin.neullabs.com)** · **[Documentation](https://docs.neullabs.com/ukkin)** · **[GitHub](https://github.com/neul-labs/ukkin)** · **[Neul Labs](https://www.neullabs.com)**
+
+Your phone is always on, always with you. Ukkin lets you build personal AI agents that work in the background - checking prices, monitoring social media, triaging emails, or running any workflow you describe in plain English. Ukkin is an open-source Flutter app from [Neul Labs](https://www.neullabs.com).
 
 ## Why Ukkin?
 
@@ -127,3 +129,17 @@ This is an experimental project exploring on-device AI agents. Contributions wel
 ## License
 
 MIT
+
+---
+
+## Part of the Neul Labs toolchain
+
+Ukkin is part of the OpenClaw cluster at [Neul Labs](https://www.neullabs.com):
+
+| Project | Description |
+|---------|-------------|
+| [openclaw-rs](https://github.com/neul-labs/openclaw-rs) | A community Rust implementation of OpenClaw. |
+| [openclawMU](https://github.com/neul-labs/openclawMU) | Multi-tenant fork of OpenClaw with strict data isolation. |
+| [openclawOS](https://github.com/neul-labs/openclawOS) | OS-like architecture for self-hosted AI assistants. |
+
+Explore all projects at [neullabs.com](https://www.neullabs.com).
